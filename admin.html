@@ -1,0 +1,88 @@
+//admin.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Deshpande Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Deshpande Properties - Admin Dashboard</h1>
+        <!-- Tabs or Navigation -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="my_bookings.html">My Bookings</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <input type="text" placeholder="Location" id="filter-location">
+        <input type="text" placeholder="Broker" id="filter-broker">
+        <input type="number" placeholder="Min Price" id="filter-min-price">
+        <input type="number" placeholder="Max Price" id="filter-max-price">
+        <select id="filter-bedrooms">
+            <option value="">Bedrooms</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3+</option>
+        </select>
+        <button id="apply-filter">Apply Filter</button>
+    </section>
+
+    <!-- Property List -->
+    <section id="property-list" class="property-list">
+        <!-- Property tiles will be generated dynamically -->
+    </section>
+
+    <!-- Modals -->
+    <!-- Edit Property Modal -->
+    <div id="edit-property-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-edit">&times;</span>
+            <h2>Edit Property</h2>
+            <form id="edit-property-form">
+                <label>Location:</label>
+                <input type="text" id="edit-location">
+                <label>Price:</label>
+                <input type="number" id="edit-price">
+                <label>Bedrooms:</label>
+                <input type="number" id="edit-bedrooms">
+                <label>Bathrooms:</label>
+                <input type="number" id="edit-bathrooms">
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Leads Modal -->
+    <div id="view-leads-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-leads">&times;</span>
+            <h2>Leads for Property</h2>
+            <table id="leads-table">
+                <thead>
+                    <tr>
+                        <th>Time Slot</th>
+                        <th>Broker Name</th>
+                        <th>Client Name</th>
+                        <th>Contact Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Leads data will be inserted here dynamically -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Admin JS -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

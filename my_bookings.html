@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bookings - Deshpande Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Deshpande Properties</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="my_bookings.html">My Bookings</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- My Bookings Section -->
+    <section class="my-bookings">
+        <h2>My Scheduled Visits</h2>
+
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <form id="booking-filter-form">
+                <input type="text" id="location" placeholder="Location">
+                <input type="number" id="min-price" placeholder="Min Price">
+                <input type="number" id="max-price" placeholder="Max Price">
+                <select id="bedrooms">
+                    <option value="">Bedrooms</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <select id="bathrooms">
+                    <option value="">Bathrooms</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <select id="sort-by">
+                    <option value="price-asc">Sort by Price (Low to High)</option>
+                    <option value="price-desc">Sort by Price (High to Low)</option>
+                    <option value="area-asc">Sort by Area (Low to High)</option>
+                    <option value="area-desc">Sort by Area (High to Low)</option>
+                </select>
+                <button type="submit">Apply Filters</button>
+            </form>
+        </section>
+
+        <!-- Booking List Section -->
+        <section class="property-listings">
+            <!-- Dummy Booked Property 1 -->
+            <div class="property-tile">
+                <img src="images/property1.jpg" alt="Property 1">
+                <div class="property-info">
+                    <p>Scheduled for: 10:00 AM, 25th Oct 2024</p>
+                    <h3>Property ID: 1</h3>
+                    <p>2 BHK in New York</p>
+                    <p>Location: Time Square</p>
+                    <p>Price: ₹15,000/month | Area: 600 sqft</p>
+                    <p>Bedrooms: 2 | Bathrooms: 1</p>
+                    <button class="modify-visit">Modify Booking</button>
+                    <button class="cancel-visit">Cancel Booking</button>
+                </div>
+            </div>
+
+            <!-- Dummy Booked Property 2 -->
+            <div class="property-tile">
+                <img src="images/property2.jpg" alt="Property 2">
+                <div class="property-info">
+                    <p>Scheduled for: 3:00 PM, 27th Oct 2024</p>
+                    <h3>Property ID: 2</h3>
+                    <p>2 BHK in Bangalore</p>
+                    <p>Location: Jayanagar</p>
+                    <p>Price: ₹12,000/month | Area: 700 sqft</p>
+                    <p>Bedrooms: 2 | Bathrooms: 2</p>
+                    <button class="modify-visit">Modify Booking</button>
+                    <button class="cancel-visit">Cancel Booking</button>
+                </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Modify Booking Modal (same as Book Visit Modal) -->
+    <div id="modify-visit-modal" class="modal">
+        <div class="modal-content">
+            <span class="modify-close-modal">&times;</span>
+            <h3>Modify Booking for Property ID: <span id="modify-property-id"></span></h3>
+            <form id="modify-visit-form">
+                <label for="visit-type">Select Visit Type:</label>
+                <input type="radio" id="in-person" name="visit-type" value="In Person" checked> In Person
+                <input type="radio" id="video-chat" name="visit-type" value="Video Chat"> Video Chat
+                <br>
+                <label for="time-slot">Select Time Slot:</label>
+                <select id="modify-time-slot">
+                    <option value="Slot 1">10:00 AM - 11:00 AM</option>
+                    <option value="Slot 2">12:00 PM - 1:00 PM</option>
+                    <option value="Slot 3">3:00 PM - 4:00 PM</option>
+                </select>
+                <button type="submit">Confirm Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/bookings.js"></script>
+</body>
+</html>

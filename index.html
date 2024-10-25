@@ -1,0 +1,106 @@
+//index.html - This is html for Home tab
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshpande Properties</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <h1>Deshpande Properties</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="my_bookings.html">My Bookings</a></li>
+                <li><a href="admin.html">Admin Dashboard</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <form id="filter-form">
+            <input type="text" id="location" placeholder="Location">
+            <input type="number" id="min-price" placeholder="Min Price">
+            <input type="number" id="max-price" placeholder="Max Price">
+            <select id="bedrooms">
+                <option value="">Bedrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select id="bathrooms">
+                <option value="">Bathrooms</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <select id="sort-by">
+                <option value="price-asc">Sort by Price (Low to High)</option>
+                <option value="price-desc">Sort by Price (High to Low)</option>
+                <option value="area-asc">Sort by Area (Low to High)</option>
+                <option value="area-desc">Sort by Area (High to Low)</option>
+            </select>
+            <button type="submit">Apply Filters</button>
+        </form>
+    </section>
+
+    <!-- Property Listings Section -->
+    <section class="property-listings">
+        <!-- Dummy Property 1 -->
+        <div class="property-tile">
+            <img src="images/property1.jpg" alt="Property 1">
+            <div class="property-info">
+                <h3>Property ID: 1</h3>
+                <p>2 BHK in New York</p>
+                <p>Location: Time Square</p>
+                <p>Price: ₹15,000/month | Area: 600 sqft</p>
+                <p>Bedrooms: 2 | Bathrooms: 1</p>
+                <button class="book-visit">Book Visit</button>
+            </div>
+        </div>
+
+        <!-- Repeat for more dummy properties -->
+        <div class="property-tile">
+            <img src="images/property2.jpg" alt="Property 2">
+            <div class="property-info">
+                <h3>Property ID: 2</h3>
+                <p>2 BHK in Bangalore</p>
+                <p>Location: Jayanagar</p>
+                <p>Price: ₹12,000/month | Area: 700 sqft</p>
+                <p>Bedrooms: 2 | Bathrooms: 2</p>
+                <button class="book-visit">Book Visit</button>
+            </div>
+        </div>
+
+        <!-- Add more properties as needed -->
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="visit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3>Book Visit for Property ID: <span id="property-id"></span></h3>
+            <form id="visit-form">
+                <label for="visit-type">Select Visit Type:</label>
+                <input type="radio" id="in-person" name="visit-type" value="In Person" checked> In Person
+                <input type="radio" id="video-chat" name="visit-type" value="Video Chat"> Video Chat
+                <br>
+                <label for="time-slot">Select Time Slot:</label>
+                <select id="time-slot">
+                    <option value="Slot 1">10:00 AM - 11:00 AM</option>
+                    <option value="Slot 2">12:00 PM - 1:00 PM</option>
+                    <option value="Slot 3">3:00 PM - 4:00 PM</option>
+                </select>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
