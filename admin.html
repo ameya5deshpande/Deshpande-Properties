@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Deshpande Properties - Admin Dashboard</h1>
+        <h1>Deshpande Properties</h1>
         <!-- Tabs or Navigation -->
         <nav>
             <ul>
@@ -81,6 +81,20 @@
             </table>
         </div>
     </div>
+
+    <!-- Schedule Modal -->
+    <div id="view-schedules-modal" class="modal">
+        <div class="modal-content">
+            <h3>Manage Schedules</h3>
+            <table id="schedules-table">
+            <thead><tr><th>Time Slot</th><th>Actions</th></tr></thead>
+            <tbody></tbody>
+            </table>
+            <button id="add-schedule">Add Schedule</button>
+            <button class="close-modal-schedules">Close</button>
+        </div>
+    </div>
+
 
     <!-- Admin JS -->
     <script src="js/admin.js"></script>
