@@ -21,6 +21,26 @@
         </nav>
     </header>
     
+    <!-- Add Property Button -->
+    <button id="addPropertyBtn" onclick="openPropertyForm()">Add Property</button>
+
+    <!-- Add Property Form -->
+    <div id="propertyForm" style="display: none;">
+    <h3>Add New Property</h3>
+    <form id="propertyFormDetails">
+        <label>Location:</label><input type="text" id="location" name="location"><br>
+        <label>Price:</label><input type="number" id="price" name="price"><br>
+        <label>Area:</label><input type="text" id="area" name="area"><br>
+        <label>Bedrooms:</label><input type="number" id="bedrooms" name="bedrooms"><br>
+        <label>Bathrooms:</label><input type="number" id="bathrooms" name="bathrooms"><br>
+        <label>Images:</label><input type="file" id="images" name="images" multiple><br>
+        <button type="submit" onclick="submitProperty(event)">Submit</button>
+    </form>
+    
+    </form>
+    </div>
+
+    
     <!-- Filter Section -->
     <section class="filter-section">
         <input type="text" placeholder="Location" id="filter-location">

@@ -111,4 +111,69 @@ document.addEventListener('DOMContentLoaded', () => {
             row.querySelector('.remove-schedule').addEventListener('click', () => row.remove());
         }
     });
+
+    // Show Add Property Form
+    window.openPropertyForm = function() {
+        const form = document.getElementById('propertyForm');
+        if (form) {
+            form.style.display = 'block';
+        }
+    }
+    
+  
+    // Handle form submission
+        function submitProperty(event) {
+        event.preventDefault();
+    
+        // Retrieve the values from the form inputs
+        const location = document.getElementById('location').value;
+        const price = document.getElementById('price').value;
+        const area = document.getElementById('area').value;
+        const bedrooms = document.getElementById('bedrooms').value;
+        const bathrooms = document.getElementById('bathrooms').value;
+    
+        // Construct the data object to send to the server
+        const propertyData = {
+            location,
+            price,
+            area,
+            bedrooms,
+            bathrooms
+        };
+    
+        // Send the data to the backend using fetch API
+        fetch('http://localhost:3000/add-Property', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                location: location,
+                price: price,
+                area: area,
+                bedrooms: bedrooms,
+                bathrooms: bathrooms,
+                images: []  // Placeholder for images
+              })
+        })
+        .then(response => {
+            if (!response.ok) {
+              throw new Error("Failed to add property");
+            }
+            return response.json();
+          })
+        .then(data => {
+            alert("Property added successfully!");
+            console.log("Response data:", data);
+          })
+        .catch(error => {
+            alert(error.message);  // Display the exact error in the alert
+            console.error("Error details:", error);
+          });
+    }
+    
+    // Make submitProperty globally accessible
+    window.submitProperty = submitProperty;
+    
+  
 });
