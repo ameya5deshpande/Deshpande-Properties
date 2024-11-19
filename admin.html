@@ -24,21 +24,36 @@
     <!-- Add Property Button -->
     <button id="addPropertyBtn" onclick="openPropertyForm()">Add Property</button>
 
-    <!-- Add Property Form -->
-    <div id="propertyForm" style="display: none;">
-    <h3>Add New Property</h3>
-    <form id="propertyFormDetails">
-        <label>Location:</label><input type="text" id="location" name="location"><br>
-        <label>Price:</label><input type="number" id="price" name="price"><br>
-        <label>Area:</label><input type="text" id="area" name="area"><br>
-        <label>Bedrooms:</label><input type="number" id="bedrooms" name="bedrooms"><br>
-        <label>Bathrooms:</label><input type="number" id="bathrooms" name="bathrooms"><br>
-        <label>Images:</label><input type="file" id="images" name="images" multiple><br>
-        <button type="submit" onclick="submitProperty(event)">Submit</button>
-    </form>
-    
-    </form>
+    <!-- Add Property Modal -->
+    <div id="propertyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePropertyForm()">&times;</span>
+            <h3>Add New Property</h3>
+            <form id="propertyFormDetails" onsubmit="submitProperty(event)">
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required>
+
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" required>
+
+                <label for="area">Area:</label>
+                <input type="text" id="area" name="area" required>
+
+                <label for="bedrooms">Bedrooms:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required>
+
+                <label for="bathrooms">Bathrooms:</label>
+                <input type="number" id="bathrooms" name="bathrooms" required>
+
+                <label for="images">Images:</label>
+                <input type="file" id="images" name="images" multiple>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
+    
+    
 
     
     <!-- Filter Section -->

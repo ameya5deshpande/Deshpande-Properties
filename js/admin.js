@@ -6,6 +6,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewLeadsModal = document.getElementById('view-leads-modal');
     const viewSchedulesModal = document.getElementById('view-schedules-modal');
 
+    function openPropertyForm() {
+        document.getElementById("propertyModal").style.display = "block";
+      }
+      
+      function closePropertyForm() {
+        document.getElementById("propertyModal").style.display = "none";
+      }
+      
+      // Close modal when clicking outside of it
+      window.onclick = function (event) {
+        const modal = document.getElementById("propertyModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+      
+
     // Dummy Properties Data
     const properties = [
         { id: 1, location: "Time Square", price: 2000, area: 2000, bedrooms: 2, bathrooms: 2, broker: "Deshpande Properties", image: "images/property1.jpg" },
@@ -114,6 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Show Add Property Form
     window.openPropertyForm = function() {
+        console.log("Function called!")
         const form = document.getElementById('propertyForm');
         if (form) {
             form.style.display = 'block';
@@ -174,6 +192,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Make submitProperty globally accessible
     window.submitProperty = submitProperty;
+
+    // Ensure the function is globally accessible
+window.openPropertyForm = function () {
+    document.getElementById("propertyModal").style.display = "block";
+  };
+  
+  window.closePropertyForm = function () {
+    document.getElementById("propertyModal").style.display = "none";
+  };
+  
     
   
 });
