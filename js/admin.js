@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
   
     // Handle form submission
-        function submitProperty(event) {
+    function submitProperty(event) {
         event.preventDefault();
     
         // Retrieve the values from the form inputs
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         // Send the data to the backend using fetch API
-        fetch('http://localhost:3000/add-Property', {
+        fetch('https://mgesjjfsj3.execute-api.eu-north-1.amazonaws.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -201,7 +201,5 @@ window.openPropertyForm = function () {
   window.closePropertyForm = function () {
     document.getElementById("propertyModal").style.display = "none";
   };
-  
-    
-  
+
 });
