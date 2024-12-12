@@ -160,8 +160,8 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     
         // Send the data to the backend using fetch API
-        fetch('https://mgesjjfsj3.execute-api.eu-north-1.amazonaws.com', {
-            method: 'POST',
+        fetch('https://mgesjjfsj3.execute-api.eu-north-1.amazonaws.com/add-property', {
+            method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -172,11 +172,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 bedrooms: bedrooms,
                 bathrooms: bathrooms,
                 images: []  // Placeholder for images
-              })
+              }),
+            mode: 'no-cors'  
         })
         .then(response => {
             if (!response.ok) {
-              throw new Error("Failed to add property");
+                return response.json().then(err => { throw new Error(err.error || "Failed to add property"); });
             }
             return response.json();
           })
