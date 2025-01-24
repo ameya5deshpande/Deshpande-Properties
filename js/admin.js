@@ -175,15 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
               }),
             mode: 'no-cors'  
         })
-        .then(response => {
-            if (!response.ok) {
-                return response.json().then(err => { throw new Error(err.error || "Failed to add property"); });
-            }
-            return response.json();
-          })
         .then(data => {
             alert("Property added successfully!");
-            console.log("Response data:", data);
+            //console.log("Response data:", data);
           })
         .catch(error => {
             alert(error.message);  // Display the exact error in the alert
